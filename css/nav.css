@@ -23,24 +23,14 @@
     align-items: center;
 }
 
-.swiper-pagination-bullet {
-    width: 19px;
-    height: 21px;
-    text-align: center;
-    line-height: 20px;
-    font-size: 12px;
-    color: #000;
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.2);
+.swiper-button-prev{
+    background-color: cornsilk;
 }
 
-.swiper-pagination-bullet-active {
-    color: #fff;
-    background: #007aff;
+.swiper-button-prev::after{
+    color: black;
+    font-size: 10px !important;
 }
-
-
-
 
 body {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
