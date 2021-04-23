@@ -551,18 +551,16 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-                // dynamicBullets: true,
-                // renderBullet: function (index, className) {
-                //     return '<span class="' + className + '">' + '</span>'
-                //     // + '<button class="pause"> <span>暫停投影片</span>';
-                // },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
         });
     </script>
