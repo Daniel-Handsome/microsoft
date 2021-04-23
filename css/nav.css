@@ -26,7 +26,13 @@
 }
 
 .swiper-button-next,.swiper-button-prev{
-    font-size: 4px;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.swiper-button-next::after,.swiper-button-prev::after{
+    font-size: 1px !important;
 }
 
 
