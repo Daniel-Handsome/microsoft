@@ -25,14 +25,33 @@
     align-items: center;
 }
 
-.swiper-button-next,.swiper-button-prev{
-    width: 40px !important;
-    height: 40px !important;
+#div-one>div>div.swiper-button-prev,
+#div-one>div>div.swiper-button-next {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
     background-color: #fff;
     border-radius: 50%;
+    transition:1s ;
 }
-.swiper-button-next::after,.swiper-button-prev::after{
+#section-one:hover .swiper-button-prev,#section-one:hover .swiper-button-next{
+    opacity: 1;
+}
+
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
     font-size: 1px !important;
+}
+
+#div-one>div>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: black;
+
+}
+
+#div-one>div>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: black;
 }
 
 
