@@ -10,6 +10,9 @@
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
 </head>
 
 <body>
@@ -281,10 +284,10 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img
                                     src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4ntGe?ver=8414&q=0&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=0&y=213&s=2120&d=795&aim=true"
-                                    width="100%" width="100%" alt=""></div>
+                                    width="100%" alt=""></div>
                             <div class="swiper-slide"><img
                                     src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWAx8d?ver=9954&q=0&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=0&y=300&s=3000&d=1125&aim=true"
-                                    width="100%" alt=""></div>
+                                    alt=""></div>
 
                         </div>
                         <!-- Add Arrows -->
@@ -338,7 +341,7 @@
                         <div>
                             <h1>Surface Laptop 3</h1>
                             <p>透過纖薄、輕巧且優雅的設計、更快的效能和長達 11.5 小時的電池續航力，強而有力地展現自我。
-                                <p></p>
+                            <p></p>
                         </div>
                         <a
                             href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-3?activetab=overview&icid=mscom_marcom_CPH1a_SurfaceLaptop3">立刻選購
@@ -349,8 +352,8 @@
                             alt="" width="100%">
                         <div>
                             <p>
-                                <h1>全新 Surface Laptop Go</h1>
-                                運用時尚和效能兼具、最輕巧的 Surface 筆記型電腦，善加利用每一天。
+                            <h1>全新 Surface Laptop Go</h1>
+                            運用時尚和效能兼具、最輕巧的 Surface 筆記型電腦，善加利用每一天。
                             </p>
                         </div>
                         <a
@@ -404,7 +407,7 @@
                         <div>
                             <h1>適用於商務的 Surface</h1>
                             <p>無論從事哪種工作，都有一款有助於成功的 Surface。
-                                <p></p>
+                            <p></p>
                         </div>
                         <a
                             href="https://www.microsoft.com/zh-tw/surface/business?icid=mscom_marcom_CPW1a_SurfaceforBusiness">立刻選購
@@ -415,8 +418,8 @@
                             width="100%" alt="">
                         <div>
                             <p>
-                                <h1>Microsoft 365 商務版</h1>
-                                透過功能強大的應用程式提高生產力、聯繫和安全，始終領先一步。
+                            <h1>Microsoft 365 商務版</h1>
+                            透過功能強大的應用程式提高生產力、聯繫和安全，始終領先一步。
                             </p>
                         </div>
                         <a
@@ -551,17 +554,54 @@
     <script>
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
+            // speed:1500,
+            autoplay: {
+                delay: 3000,
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
+                renderBullet: function (index, className) {
+                    if (index == 1) {
+                        return `<span class="dot swiper-pagination-bullet"></span>` +
+                            `<button class="pause"><i class="far fa-pause"></i><span>暫停投影片</span></button>`
+                            + `<button class="play"><i class="fal fa-play"></i><span>開始投影片</span></button>`
+                            ;
+                    } else {
+                        return `<span class="dot swiper-pagination-bullet"></span>`;
+                    }
+                },
             },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
         });
+
+
+        const pause = document.querySelector('.pause');
+        const play = document.querySelector('.play');
+
+
+
+        pause.addEventListener('click', function () {
+            console.log(1);
+            swiper.autoplay.stop();
+            pause.style.display = "none";
+
+            play.style.display = "block";
+        });
+
+
+        play.addEventListener('click', function () {
+            swiper.autoplay.start();
+            play.style.display = "none";
+
+            pause.style.display = "block";
+        })
+
+
+
     </script>
 </footer>
 
