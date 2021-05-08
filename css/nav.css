@@ -177,6 +177,9 @@ body {
     margin-right: 50px;
     font-family: "MWF-MDL2";
 }
+.mainNav>ul>li:last-child>span:hover >.dropdown{
+    display: block;
+}
 
 .mainNav>ul>li:nth-child(5) {
     display: none;
@@ -247,6 +250,7 @@ body {
     left: -800px;
     top: 35px;
     min-width: 820px;
+    z-index: 111111111;
 }
 
 .dropdown>ul {
